@@ -1,7 +1,10 @@
+import { useTranslations } from 'next-intl';
 import styles from './page.module.css';
 
 export default function Index() {
+  const t = useTranslations();
   /*
+
    * Replace the elements below with your own.
    *
    * Note: The corresponding styles are in the ./index.css file.
@@ -12,7 +15,7 @@ export default function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
+              <span> {t('Hello')} there, </span>
               Welcome owner 👋
             </h1>
           </div>
