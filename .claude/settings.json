@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm view *)",
+      "Bash(node_modules/.bin/nx migrate *)",
+      "Bash(node_modules/.bin/nx _migrate latest)",
+      "Bash(node -e \"const p=require\\('./node_modules/eslint-plugin-react-hooks'\\); console.log\\('version:', require\\('./node_modules/eslint-plugin-react-hooks/package.json'\\).version\\); console.log\\('rules:', Object.keys\\(p.rules\\).filter\\(r=>r.includes\\('compiler'\\)||r.includes\\('hook'\\)\\)\\);\")",
+      "Bash(node_modules/.bin/nx run *)",
+      "Bash(grep -vE \"^$\")",
+      "Bash(node_modules/.bin/nx run-many *)"
+    ]
+  }
+}

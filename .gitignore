@@ -44,3 +44,4 @@ Thumbs.db
 .env.local
 .nx
 .nx/*
+.claude/worktrees

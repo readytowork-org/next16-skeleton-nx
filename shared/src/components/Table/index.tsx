@@ -38,6 +38,8 @@ function Table<Data extends object>({
   const [orderBy, setOrderBy] = useState<keyof Data | undefined>(undefined);
 
   useEffect(() => {
+    // Standard SSR mount flag; safe to set once after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsClient(true);
   }, []);
 
@@ -47,8 +49,8 @@ function Table<Data extends object>({
         ? order === undefined
           ? 'asc'
           : order === 'asc'
-          ? 'desc'
-          : undefined
+            ? 'desc'
+            : undefined
         : 'asc';
 
     setOrder(nextOrder);
@@ -81,8 +83,8 @@ function Table<Data extends object>({
       return order === 'asc'
         ? 'Click to sort descending'
         : order === 'desc'
-        ? 'Click to cancel sorting'
-        : 'Click to sort ascending';
+          ? 'Click to cancel sorting'
+          : 'Click to sort ascending';
     }
     return 'Click to sort ascending';
   };
@@ -184,8 +186,8 @@ function Table<Data extends object>({
                                     ? order === 'asc'
                                       ? '/assets/icons/sort-asc.svg'
                                       : order === 'desc'
-                                      ? '/assets/icons/sort-desc.svg'
-                                      : '/assets/icons/sort.svg'
+                                        ? '/assets/icons/sort-desc.svg'
+                                        : '/assets/icons/sort.svg'
                                     : '/assets/icons/sort.svg'
                                 }
                                 alt={'sort icon'}
@@ -230,7 +232,7 @@ function Table<Data extends object>({
                       <CircularProgress />
                     </TableCell>
                   </TableRow>
-                ) : children ?? sortedData.length === 0 ? (
+                ) : (children ?? sortedData.length === 0) ? (
                   <TableRow>
                     <TableCell
                       height={250}

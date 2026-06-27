@@ -13,6 +13,21 @@ const nextConfig: NextConfig = {
   // For example:
   // reactStrictMode: true,
 
+  // Enable the React Compiler (babel-plugin-react-compiler) for automatic memoization.
+  reactCompiler: true,
+
+  // SVGR for Turbopack (Next.js 16's default builder): lets you import SVGs as React
+  // components, e.g. `import Icon from './icon.svg'`. The `webpack` config below is
+  // ignored by Turbopack and only applies when building with `next build --webpack`.
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js'
+      }
+    }
+  },
+
   webpack: (config) => {
     // Exclude SVG from Next.js's default file-loader rule
     const fileLoaderRule = config.module?.rules?.find(
@@ -49,4 +64,4 @@ const plugins = [
 ];
 
 // Compose the plugins
-module.exports = composePlugins(...plugins)(nextConfig);
+export default composePlugins(...plugins)(nextConfig);
