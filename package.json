@@ -11,7 +11,8 @@
     "apps:build:consumer": "nx run consumer:build:production",
     "apps:typecheck:consumer": "nx affected --target=typecheck",
     "prepare": "husky install",
-    "swagger-gen": "node --env-file .env src/services/codegen.mjs && yarn run format"
+    "swagger-gen": "node --env-file .env src/services/codegen.mjs && yarn run format",
+    "link-skills": "bash scripts/link-agent-skills.sh"
   },
   "private": true,
   "dependencies": {
