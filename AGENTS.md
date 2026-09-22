@@ -35,6 +35,7 @@ actual structure and commands.
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `README.md`                  | Aspirational feature list (stale, see "Known inconsistencies" #6).                                                                                                                                        |
 | `AGENTS.md` (this file)      | Agent-facing guide: real architecture, conventions, commands.                                                                                                                                             |
+| `MEMORY.md`                  | Running log of progress, decisions, and next steps. Update it as you work; read it first to pick up where a previous session left off.                                                                    |
 | `.agents/skills/*/SKILL.md`  | Canonical skill definitions: four repo-specific workflow skills, plus a vendored `nextjs16-skills` reference (see its `VENDORED.md`). `.claude/skills` and `.codex/skills` are symlinks to this directory; edit skills only under `.agents/skills/`. |
 
 If you add a new documentation file, list it here too.
